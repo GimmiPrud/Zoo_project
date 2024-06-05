@@ -10,3 +10,10 @@ class Testzoo(TestCase):
 
     # però è più consigliato utilizzare variabili locali allinterno delle funzoini per i test, invece di variabili globali come quelle della funzione setup
     # Questo perchè durante i test sulle funzionni le variabili potrebbero modificarsi e i test successivi potrebbero essere fallati 
+
+    # Test sul progetto zoo.py:
+
+    def test_animal_dimension(self):
+        zookeeper1: ZooKeeper = ZooKeeper(name="Alessio",surname="Carlini",id=379)
+        fence1: Fence = Fence(area=300, temperature=21.0,habitat="Savanna")
+        animal1: Animal = Animal(name="Bill",species="Felide", age=2, height=10.0,width=1.50, preferred_habitat="Savanna")

@@ -35,10 +35,30 @@ class Fence:
 
 
 class ZooKeeper:
+    
     def __init__(self, name: str, surname: str, id: int):
         self.name = name
         self.surname = surname
         self.id = id
+
+
+    def add_animal(self, animal: Animal, fence: Fence):
+        if animal.preferred_habitat != fence.habitat and fence.area < animal.height * animal.width:
+            pass
+
+        else:
+            fence.animals.append(animal)
+            fence.area -= (animal.height * animal.width)
+        
+        return fence.area
+    
+
+    def remove_animal(self, animal: Animal, fence: Fence):
+        if animal in fence.animals:
+            fence.animals.remove(animal)
+            fence.area += (animal.height * animal.width)
+        
+        return fence.area
 
 
     def feed(self, animal: Animal, fence):
@@ -47,9 +67,9 @@ class ZooKeeper:
             animal.height *= 1.02
             animal.width *= 1.02
         
-        return round(animal.health, 3), round(animal.height, 3), round(animal.width ,3)
-        
+        return round(animal.health, 3), round(animal.height, 3), round(animal.width ,3)    
     
+
     def clean(self, fence: Fence) -> float:
         for a in fence.animals:
             occupied_area = a.height * a.width
@@ -64,25 +84,6 @@ class Zoo:
     def __init__(self, fences: list[Fence], zoo_keepers: list[ZooKeeper]):
         self.fences = fences
         self.zoo_keepers = zoo_keepers
-
-    def add_animal(self, animal: Animal, fence: Fence):
-        if animal.preferred_habitat != fence.habitat and fence.area < animal.height * animal.width:
-            pass
-
-        else:
-            fence.animals.append(animal)
-            fence.area -= (animal.height * animal.width)
-        
-        return fence.area
-
-
-    def remove_animal(self, animal: Animal, fence: Fence):
-        if animal in fence.animals:
-            fence.animals.remove(animal)
-            fence.area += (animal.height * animal.width)
-        
-        return fence.area
-
 
     def describe_zoo(self):
         print(f"Guardians:\n")
