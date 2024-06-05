@@ -1,6 +1,6 @@
 import unittest 
 from unittest import TestCase
-from src.zoo import Zoo, ZooKeeper, Animal, Fence  # src.zoo = cartella.file
+from src.zoo import Zoo, ZooKeeper, Animal, Fence  # src.zoo = cartella.file e si importano le funzioni di zoo
 
 class Testzoo(TestCase):
 
