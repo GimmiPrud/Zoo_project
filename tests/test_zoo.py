@@ -53,3 +53,4 @@ class Testzoo(TestCase):
 if __name__=="__main__":
     unittest.main()
 
+# command terminal  python3 -m unittest -v
