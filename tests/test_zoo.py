@@ -9,3 +9,4 @@ class Testzoo(TestCase):
         pass
 
     # però è più consigliato utilizzare variabili locali allinterno delle funzoini per i test, invece di variabili globali come quelle della funzione setup
+    # Questo perchè durante i test sulle funzionni le variabili potrebbero modificarsi e i test successivi potrebbero essere fallati 
