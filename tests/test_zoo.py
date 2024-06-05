@@ -1,6 +1,6 @@
 import unittest 
 from unittest import TestCase
-from src.zoo import Zoo, ZooKeeper, Animal, Fence
+from src.zoo import Zoo, ZooKeeper, Animal, Fence  # src.zoo = cartella.file
 
 class Testzoo(TestCase):
 
